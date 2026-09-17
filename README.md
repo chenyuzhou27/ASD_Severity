@@ -41,7 +41,7 @@ Output files:
 
 Cleans the data and builds the analysis object: merges the batch-adjusted species profile with a species tree (`sp.tree.rds`) and diet metadata (`metadata_diet_per_cal.xlsx`) into a phyloseq / MicrobiotaProcess (MPSE) object, then computes alpha diversity and PCA and derives the relative-abundance species table filtered at >5% prevalence.
 
-Output files (with figure numbers):
+Output files:
 
 - `supFig1a.alpha_asd_control.pdf` — Supplementary Figure 1a (alpha diversity, ASD vs Control)
 - `supFig1b.pca.2groups.pdf` — Supplementary Figure 1b (PCA, ASD vs Control)
@@ -52,7 +52,7 @@ Output files (with figure numbers):
 
 Draws the microbiome-overview panels: alpha diversity across severity clusters with Wilcoxon tests, PCA by cluster, PERMANOVA (R² bar plot with BH-adjusted q values), and within- and between-group Bray-Curtis distance comparisons.
 
-Output files (with figure numbers):
+Output files:
 
 - `alpha.div.test.result.txt` — Fig 2a/2b (alpha diversity Wilcoxon tests, BH-adjusted)
 - `Fig2c.permonova.withcontrol.txt` — Fig 2c (PERMANOVA R² and q values)
@@ -96,7 +96,7 @@ Output files (data for module panels of Fig.3 / Fig.4 / Fig.5 and downstream sup
 
 Combines the MaAsLin2 results from scripts 08-10 (q < 0.2, |coef| > 0.3), and draws the severity-gradient forest plot for the ordinal Cluster linear term, marking features that are also associated with ASD diagnosis (Cohort) using different point shapes.
 
-Output files (with figure numbers):
+Output files:
 
 - `Figure3.cluster_ord_forest_plots.L.q.0.2.withcontrol_coef.0.3.withASD.pdf` — Fig 3a 
 
@@ -104,7 +104,7 @@ Output files (with figure numbers):
 
 Groups the ASD-only MaAsLin2 results from scripts 08-10 by questionnaire domain (SRS, CBCL, ASC-ASD, SEQ) and draws forest plots per domain at q < 0.2, plus UpSet plots of the overlap of significant features between domains and a parallel set of p < 0.05 supplementary figures and tables.
 
-Output files (with figure numbers):
+Output files:
 
 - `Figure4.SRS_forest_plot.qv.pdf` — Fig 4 (SRS)
 - `Figure4.seq_forest_plot.qv.pdf` — Fig 4 (SEQ)
@@ -119,7 +119,7 @@ Output files (with figure numbers):
 
 Analyses the continuous ASD index : draws a ridge plot of the index across severity clusters and runs MaAsLin2 of modules, pathways, and species against the ASD index with the same confounder set, then merges the hits (q < 0.2, |coef| > 0.3), flags those that also appear among ASD-diagnosis (Cohort) markers, and draws the resulting forest plot.
 
-Output files (with figure numbers):
+Output files:
 
 - `Figure1d.pdf` — Fig 1d (ASD index distribution across severity clusters)
 - `Figure2b.asd_index_equal_distance_forest_plots.L.q.0.2_withcontrol.0.3.txt` — Fig 2b (ASD index marker table)
@@ -128,6 +128,14 @@ Output files (with figure numbers):
 
 ---
 
+## Data & Intermediate Files
+
+Files:
+
+- `cluster.marker.nodes.mathc_lable.csv` - Formatting standards and description mappings for taxa, modules, and pathways
+- `module.descript.txt` - Description files mapping Module IDs to module descriptions
+- `sp.tree.rds` - Taxonomic lineage and clade mapping for species
+---
 
 ## Environment & Dependencies
 
