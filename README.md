@@ -129,6 +129,75 @@ Output files (with figure numbers):
 ---
 
 
-## R packages used
+## Environment & Dependencies
 
-`MMUPHin`, `Maaslin2`, `vegan`, `rstatix`, `usedist`, `broom`, `phyloseq`, `MicrobiotaProcess`, `omixerRpm`, `clusterSim`, `dplyr`, `tibble`, `tidyr`, `purrr`, `stringr`, `Hmisc`, `readxl`, `xlsx`, `ggplot2`, `ggpubr`, `ggforestplot`, `ggridges`, `UpSetR`, `ComplexHeatmap`, `survminer`, `corrr`, `ggstatsplot`, `stats`, `utils`
+- **R Version:** 4.5.3 (2026-03-11)
+- **Platform:** x86_64-redhat-linux-gnu
+- **OS Platform:** AlmaLinux 9.7 (Moss Jungle Cat)
+
+<details>
+<summary><b>Click to expand full sessionInfo()</b></summary>
+
+```R
+R version 4.5.3 (2026-03-11)
+Platform: x86_64-redhat-linux-gnu
+Running under: AlmaLinux 9.7 (Moss Jungle Cat)
+
+Matrix products: default
+BLAS/LAPACK: FlexiBLAS OPENBLAS-OPENMP;  LAPACK version 3.9.0
+
+locale:
+ [1] LC_CTYPE=en_HK.UTF-8          LC_NUMERIC=C                  LC_TIME=en_HK.UTF-8           LC_COLLATE=en_HK.UTF-8       
+ [5] LC_MONETARY=en_HK.UTF-8       LC_MESSAGES=en_HK.UTF-8       LC_PAPER=en_HK.UTF-8          LC_NAME=en_HK.UTF-8          
+ [9] LC_ADDRESS=en_HK.UTF-8        LC_TELEPHONE=en_HK.UTF-8      LC_MEASUREMENT=en_HK.UTF-8    LC_IDENTIFICATION=en_HK.UTF-8
+
+time zone: Asia/Hong_Kong
+tzcode source: system (glibc)
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+ [1] omixerRpm_0.3.3          ggforestplot_0.1.0       survminer_0.5.2          Maaslin2_1.24.1          xlsx_0.6.5              
+ [6] clusterSim_0.51-6        MASS_7.3-65              cluster_2.1.8.2          ggstatsplot_1.0.0        corrr_0.4.5             
+[11] vegan_2.7-3              permute_0.9-10           phyloseq_1.54.2          purrr_1.2.2              tidyr_1.3.2             
+[16] broom_1.0.12             ggpubr_0.6.3             rstatix_0.7.3            MicrobiotaProcess_1.22.1 stringr_1.6.0           
+[21] Hmisc_5.2-5              ggplot2_4.0.3            readxl_1.4.5             dplyr_1.2.1              tibble_3.3.1
+[26] MMUPHin_1.18.1   
+
+loaded via a namespace (and not attached):
+  [1] splines_4.5.3               ggplotify_0.1.3             cellranger_1.1.0            datawizard_1.3.1           
+  [5] rpart_4.1.24                lifecycle_1.0.5             lattice_0.22-9              insight_1.5.0              
+  [9] backports_1.5.1             magrittr_2.0.5              rmarkdown_2.31              otel_0.2.0                 
+ [13] DBI_1.3.0                   RColorBrewer_1.1-3          ade4_1.7-24                 multcomp_1.4-30            
+ [17] abind_1.4-8                 GenomicRanges_1.62.1        BiocGenerics_0.56.0         yulab.utils_0.2.4          
+ [21] nnet_7.3-20                 TH.data_1.1-5               xlsxjars_0.9.0              rappdirs_0.3.4             
+ [25] sandwich_3.1-1              gdtools_0.5.0               IRanges_2.44.0              S4Vectors_0.48.1           
+ [29] ggrepel_0.9.8               correlation_0.8.8           tidytree_0.4.7              codetools_0.2-20           
+ [33] coin_1.4-3                  DelayedArray_0.36.1         tidyselect_1.2.1            aplot_0.2.9                
+ [37] farver_2.1.2                effectsize_1.0.2            matrixStats_1.5.0           stats4_4.5.3               
+ [41] base64enc_0.1-6             Seqinfo_1.0.0               jsonlite_2.0.0              ggtreeExtra_1.20.1         
+ [45] multtest_2.66.0             e1071_1.7-17                Formula_1.2-5               survival_3.8-6             
+ [49] iterators_1.0.14            systemfonts_1.3.2           foreach_1.5.2               tools_4.5.3                
+ [53] ggnewscale_0.5.2            treeio_1.34.0               ggstar_1.0.6                Rcpp_1.1.1-1.1             
+ [57] glue_1.8.1                  gridExtra_2.3               SparseArray_1.10.10         xfun_0.57                  
+ [61] mgcv_1.9-4                  MatrixGenerics_1.22.0       withr_3.0.2                 fastmap_1.2.0              
+ [65] ggh4x_0.3.1                 digest_0.6.39               R6_2.6.1                    gridGraphics_0.5-1         
+ [69] colorspace_2.1-2            utf8_1.2.6                  generics_0.1.4              fontLiberation_0.1.0       
+ [73] data.table_1.18.4           robustbase_0.99-7           class_7.3-23                htmlwidgets_1.6.4          
+ [77] S4Arrays_1.10.1             parameters_0.28.3           pkgconfig_2.0.3             rJava_1.0-18               
+ [81] gtable_0.3.6                modeltools_0.2-24           statsExpressions_2.0.0      S7_0.2.2                   
+ [85] XVector_0.50.0              pcaPP_2.0-5                 htmltools_0.5.9             fontBitstreamVera_0.1.1    
+ [89] carData_3.0-6               biomformat_1.38.3           scales_1.4.0                Biobase_2.70.0             
+ [93] optparse_1.8.2              ggfun_0.2.0                 knitr_1.51                  rstudioapi_0.18.0          
+ [97] reshape2_1.4.5              checkmate_2.3.4             nlme_3.1-168                proxy_0.4-29               
+[101] zoo_1.8-15                  parallel_4.5.3              libcoin_1.0-12              foreign_0.8-91             
+[105] pillar_1.11.1               grid_4.5.3                  vctrs_0.7.3                 car_3.1-5                  
+[109] htmlTable_2.5.0             paletteer_1.7.0             evaluate_1.0.5              mvtnorm_1.3-7              
+[113] cli_3.6.6                   compiler_4.5.3              rlang_1.2.0                 crayon_1.5.3               
+[117] rstantools_2.6.0            ggsignif_0.6.4              labeling_0.4.3              rematch2_2.1.2             
+[121] plyr_1.8.9                  fs_2.1.0                    ggiraph_0.9.6               stringi_1.8.7              
+[125] Biostrings_2.78.0           lazyeval_0.2.3              bayestestR_0.17.0           fontquiver_0.2.1           
+[129] Matrix_1.7-4                patchwork_1.3.2             SummarizedExperiment_1.40.0 igraph_2.3.0               
+[133] RcppParallel_5.1.11-2       biglm_0.9-3                 ggtree_4.0.5                DEoptimR_1.1-4             
+[137] ape_5.8-1
