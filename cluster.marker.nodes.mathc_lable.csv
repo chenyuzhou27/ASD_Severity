@@ -1,0 +1,68 @@
+ID,Lable
+ARO.PWY..chorismate.biosynthesis.I,Chorismate Biosynthesis I
+ASPASN.PWY..superpathway.of.L.aspartate.and.L.asparagine.biosynthesis,Superpathway of L-Aspartate And L-Asparagine Biosynthesis
+BRANCHED.CHAIN.AA.SYN.PWY..superpathway.of.branched.chain.amino.acid.biosynthesis,Superpathway of Branched Chain Amino Acid Biosynthesis
+COA.PWY..coenzyme.A.biosynthesis.I..prokaryotic.,Coenzyme A-Biosynthesis I (Prokaryotic)
+Dopamine degradation,Dopamine Degradation
+GABA synthesis II,GABA-Synthesis II
+GALACT.GLUCUROCAT.PWY..superpathway.of.hexuronide.and.hexuronate.degradation,Superpathway of Hexuronide And Hexuronate Degradation
+HEMESYN2.PWY..heme.b.biosynthesis.II..oxygen.independent.,Heme B-Biosynthesis II (Oxygen Independent)
+Histamine degradation,Histamine Degradation
+ILEUSYN.PWY..L.isoleucine.biosynthesis.I..from.threonine.,L-Isoleucine Biosynthesis I (From Threonine)
+LIPA.CORESYN.PWY..lipid.A.core.biosynthesis..E..coli.K.12.,Lipid A-Core Biosynthesis (E.Coli K-12)
+LPSSYN.PWY..superpathway.of.lipopolysaccharide.biosynthesis,Superpathway of Lipopolysaccharide Biosynthesis
+lysine degradation II,Lysine Degradation II
+P221.PWY..octane.oxidation,Octane Oxidation
+putrescine degradation,Putrescine Degradation
+PWY.5088..L.glutamate.degradation.VIII..to.propanoate.,L-Glutamate Degradation VIII (to Propanoate)
+PWY.5097..L.lysine.biosynthesis.VI,L-Lysine Biosynthesis VI
+PWY.5136..fatty.acid..beta..oxidation.II..plant.peroxisome.,Fatty Acid Beta-Oxidation II (Plant Peroxisome)
+PWY.5656..mannosylglycerate.biosynthesis.I,Mannosylglycerate Biosynthesis I
+PWY.5667..CDP.diacylglycerol.biosynthesis.I,CDP-Diacylglycerol Biosynthesis I
+PWY.5686..UMP.biosynthesis.I,UMP-Biosynthesis I
+PWY.5705..allantoin.degradation.to.glyoxylate.III,Allantoin Degradation to Glyoxylate III
+PWY.5723..Rubisco.shunt,Rubisco Shunt
+PWY.5840..superpathway.of.menaquinol.7.biosynthesis,Superpathway of Menaquinol 7-Biosynthesis
+PWY.6123..inosine.5..phosphate.biosynthesis.I,Inosine-5-Phosphate Biosynthesis I
+PWY.6124..inosine.5..phosphate.biosynthesis.II,Inosine-5-Phosphate Biosynthesis II
+PWY.6163..chorismate.biosynthesis.from.3.dehydroquinate,Chorismate Biosynthesis From 3-Dehydroquinate
+PWY.6270..isoprene.biosynthesis.I,Isoprene Biosynthesis I
+PWY.6892..thiazole.component.of.thiamine.diphosphate.biosynthesis.I,Thiazole Component of Thiamine Diphosphate Biosynthesis I
+PWY.7197..pyrimidine.deoxyribonucleotide.phosphorylation,Pyrimidine Deoxyribonucleotide Phosphorylation
+PWY.7208..superpathway.of.pyrimidine.nucleobases.salvage,Superpathway of Pyrimidine Nucleobases Salvage
+PWY.724..superpathway.of.L.lysine..L.threonine.and.L.methionine.biosynthesis.II,"Superpathway of L-Lysine, L-Threonine And L-Methionine Biosynthesis II"
+PWY.7254..TCA.cycle.VII..acetate.producers.,TCA-Cycle VII (Acetate Producers)
+PWY.7328..superpathway.of.UDP.glucose.derived.O.antigen.building.blocks.biosynthesis,Superpathway of UDP-Glucose Derived O-Antigen Building Blocks Biosynthesis
+PWY.7385..1.3.propanediol.biosynthesis..engineered.,"1,3-Propanediol Biosynthesis (Engineered)"
+PWY.7399..methylphosphonate.degradation.II,Methylphosphonate Degradation II
+PWY.7409..phospholipid.remodeling..phosphatidylethanolamine..yeast.,"Phospholipid Remodeling (Phosphatidylethanolamine, Yeast)"
+PWY.7790..UMP.biosynthesis.II,UMP-Biosynthesis II
+PWY.7791..UMP.biosynthesis.III,UMP-Biosynthesis III
+PWY.7874..L.threonate.degradation,L-Threonate Degradation
+PWY.8086...S..lactate.fermentation.to.propanoate..acetate.and.hydrogen,"S-Lactate Fermentation to Propanoate, Acetate And Hydrogen"
+PWY.8187..L.arginine.degradation.XIII..reductive.Stickland.reaction.,L-Arginine Degradation XIII (Reductive Stickland Reaction)
+PWY.8190..L.glutamate.degradation.XI..reductive.Stickland.reaction.,L-Glutamate Degradation XI (Reductive Stickland Reaction)
+PWY0.1319..CDP.diacylglycerol.biosynthesis.II,CDP-Diacylglycerol Biosynthesis II
+PWY0.1479..tRNA.processing,TRNA-Processing
+PWY0.41..allantoin.degradation.IV..anaerobic.,Allantoin Degradation IV (Anaerobic)
+PWY4FS.7..phosphatidylglycerol.biosynthesis.I..plastidic.,Phosphatidylglycerol Biosynthesis I (Plastidic)
+PWY4FS.8..phosphatidylglycerol.biosynthesis.II..non.plastidic.,Phosphatidylglycerol Biosynthesis II (Non Plastidic)
+REDCITCYC..TCA.cycle.VI..Helicobacter.,TCA-Cycle VI (Helicobacter)
+s__Bittarella_massiliensis,Bittarella Massiliensis
+s__Blautia_glucerasea,Blautia Glucerasea
+s__Blautia_hydrogenotrophica,Blautia Hydrogenotrophica
+s__Blautia_obeum,Blautia Obeum
+s__Catenibacillus_scindens,Catenibacillus Scindens
+s__Citrobacter_freundii,Citrobacter Freundii
+s__Corynebacterium_durum,Corynebacterium Durum
+s__Enterococcus_faecalis,Enterococcus Faecalis
+s__Escherichia_coli,Escherichia Coli
+s__Lachnoclostridium_sp_An118,Lachnoclostridium sp An118
+s__Mogibacterium_diversum,Mogibacterium Diversum
+s__Peptostreptococcus_stomatis,Peptostreptococcus Stomatis
+s__Prevotella_copri_clade_A,Prevotella Copri Clade A
+s__Pseudoflavonifractor_capillosus,Pseudoflavonifractor Capillosus
+s__Pseudoflavonifractor_sp_An184,Pseudoflavonifractor sp An184
+s__Sutterella_wadsworthensis,Sutterella Wadsworthensis
+s__Veillonella_rogosae,Veillonella Rogosae
+xylose degradation,Xylose Degradation

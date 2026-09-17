@@ -1,0 +1,147 @@
+Module	Description
+1	MF0020	ribose degradation
+2	MF0027	tyrosine degradation II
+3	MF0028	aspartate degradation I
+4	MF0025	tryptophan degradation
+5	MF0026	tyrosine degradation I
+6	MF0023	galacturonate degradation II
+7	MF0024	phenylalanine degradation
+8	MF0021	xylose degradation
+9	MF0022	galacturonate degradation I
+10	MF0018	mannose degradation
+11	MF0019	rhamnose degradation
+12	MF0030	glutamate degradation I
+13	MF0031	glutamate degradation II
+14	MF0038	methionine degradation I
+15	MF0039	methionine degradation II
+16	MF0036	isoleucine degradation
+17	MF0037	leucine degradation
+18	MF0034	alanine degradation II
+19	MF0035	glycine degradation
+20	MF0032	glutamate degradation III
+21	MF0033	alanine degradation I
+22	MF0029	aspartate degradation II
+23	MF0085	urea degradation
+24	MF0086	acetyl-CoA to acetate
+25	MF0083	succinate consumption
+26	MF0084	succinate conversion to propionate
+27	MF0081	methanol conversion
+28	MF0082	putrescine degradation
+29	MF0080	lactate consumption II
+30	MF0005	starch degradation
+31	MF0006	lactose degradation
+32	MF0003	pectin degradation I
+33	MF0004	pectine degradation II
+34	MF0001	arabinoxylan degradation
+35	MF0089	butyrate production II
+36	MF0002	fructan degradation
+37	MF0087	acetyl-CoA to crotonyl-CoA
+38	MF0088	butyrate production I
+39	MF0096	succinate production
+40	MF0097	homoacetogenesis
+41	MF0094	propionate production II
+42	MF0095	propionate production III
+43	MF0092	lactate production
+44	MF0093	propionate production I
+45	MF0090	ethanol production I
+46	MF0091	ethanol production II
+47	MF0016	fucose degradation
+48	MF0017	galactose degradation
+49	MF0014	arabinose degradation
+50	MF0015	fructose degradation
+51	MF0012	trehalose degradation
+52	MF0013	allose degradation
+53	MF0010	sucrose degradation I
+54	MF0098	hydrogen metabolism
+55	MF0011	sucrose degradation II
+56	MF0099	methanogenesis - methyl-coM
+57	MF0009	melibiose degradation
+58	MF0007	lactose and galactose degradation
+59	MF0008	maltose degradation
+60	MF0063	glyoxylate bypass
+61	MF0064	triacylglycerol degradation
+62	MF0061	glycerol degradation II
+63	MF0062	glycerol degradation III
+64	MF0060	glycerol degradation I
+65	MF0069	NADH:ferredoxin oxidoreductase
+66	MF0102	sulfate reduction (dissimilatory)
+67	MF0103	mucin degradation
+68	MF0067	glycolysis (preparatory phase)
+69	MF0100	methanogenesis from carbon dioxide
+70	MF0068	glycolysis (pay-off phase)
+71	MF0101	nitrate reduction (dissimilatory)
+72	MF0065	Bifidobacterium shunt
+73	MF0066	Entner-Doudoroff pathway
+74	MF0074	pyruvate:formate lyase
+75	MF0075	acetate to acetyl-CoA
+76	MF0072	pyruvate dehydrogenase complex
+77	MF0073	pyruvate:ferredoxin oxidoreductase
+78	MF0070	pentose phosphate pathway (oxidative phase)
+79	MF0071	pentose phosphate pathway (non-oxidative branch)
+80	MF0078	lactaldehyde degradation
+81	MF0079	lactate consumption I
+82	MF0076	4-aminobutyrate degradation
+83	MF0077	formate conversion
+84	MF0041	valine degradation I
+85	MF0040	proline degradation
+86	MF0049	threonine degradation I
+87	MF0047	glutamine degradation II
+88	MF0048	serine degradation
+89	MF0045	cysteine degradation II
+90	MF0046	glutamine degradation I
+91	MF0043	cysteine biosynthesis/homocysteine degradation
+92	MF0044	cysteine degradation I
+93	MF0052	arginine degradation II
+94	MF0050	threonine degradation II
+95	MF0051	arginine degradation I
+96	MF0058	lysine degradation II
+97	MF0059	anaerobic fatty acid beta-oxidation
+98	MF0056	histidine degradation
+99	MF0057	lysine degradation I
+100	MF0054	arginine degradation IV
+101	MF0055	arginine degradation V
+110	MGB015	p-Cresol synthesis
+210	MGB037	Inositol synthesis
+310	MGB038	Inositol degradation
+410	MGB016	p-Cresol degradation
+510	MGB039	g-Hydroxybutyric acid (GHB) degradation
+610	MGB018	Kynurenine degradation
+710	MGB033	Quinolinic acid degradation
+810	MGB055	Propionate synthesis III
+910	MGB034	Isovaleric acid synthesis I (KADH pathway)
+102	MGB056	Propionate degradation I
+111	MGB035	Isovaleric acid synthesis II (KADC pathway)
+121	MGB036	S-Adenosylmethionine (SAM) synthesis
+131	MGB051	Glutamate degradation II
+141	MGB052	Butyrate synthesis I
+151	MGB031	17-beta-Estradiol degradation
+161	MGB053	Butyrate synthesis II
+171	MGB032	Quinolinic acid synthesis
+181	MGB054	Propionate synthesis II
+191	MGB010	Histamine degradation
+201	MGB050	Glutamate degradation I
+211	MGB019	GABA degradation
+221	MGB048	Propionate synthesis I
+231	MGB004	Kynurenine synthesis
+241	MGB026	Nitric oxide synthesis II (nitrite reductase)
+251	MGB005	Tryptophan synthesis
+261	MGB027	Nitric oxide degradation I (NO dioxygenase)
+271	MGB049	Tryptophan degradation
+281	MGB006	Glutamate synthesis I
+291	MGB028	Nitric oxide degradation II (NO reductase)
+301	MGB007	Glutamate synthesis II
+311	MGB029	ClpB (ATP-dependent chaperone protein)
+321	MGB022	GABA synthesis III
+331	MGB044	Acetate synthesis II
+341	MGB045	Acetate synthesis III
+351	MGB023	Dopamine degradation
+361	MGB024	DOPAC synthesis
+371	MGB046	Acetate synthesis IV
+381	MGB047	Acetate degradation
+391	MGB040	Menaquinone synthesis (vitamin K2) I
+401	MGB041	Menaquinone synthesis (vitamin K2) II (alternative pathway: futalosine pathway)
+411	MGB020	GABA synthesis I
+421	MGB021	GABA synthesis II
+431	MGB043	Acetate synthesis I
+441	MGB008	Acetylcholine synthesis
+451	MGB009	Histamine synthesis
