@@ -15,12 +15,12 @@ raw abundance tables (species / pathway / ko) + metadata
                 │        │                                  (supFig1a, supFig1b, Manuscript.RData, metadata.carb.rds)
                 │        └─ 07_Figure2.final.R  →  Fig.2 panels (alpha/beta diversity, PERMANOVA, distances)
                 │
-                ├─ 08.taxa.massline.batch01confounder.R     →  taxa/Log_lm_*      (species MaAsLin2)
+                ├─ 08.taxa.MaAsLin.batch01confounder.R     →  taxa/Log_lm_*      (species MaAsLin2)
                 ├─ 09.pathway.batch01confounder.R           →  pathway/Log_lm_*   (pathway MaAsLin2)
                 └─ 10.module.batch01confounder.R            →  module/Log_lm_*    (GMM/GBM module MaAsLin2)
                         │
-                        ├─ 11.massiline.cluster.batch01confonder.R  →  Fig.3 (severity-gradient forest plot)
-                        └─ 12.massiline.subscore.pdf.batch.01confounder.R  →  Fig.4-6 + SFigure6-9
+                        ├─ 11.MaAsLin.cluster.batch01confonder.R  →  Fig.3 (severity-gradient forest plot)
+                        └─ 12.MaAsLin.subscore.pdf.batch.01confounder.R  →  Fig.4-6 + SFigure6-9
                                 │
                                 └─ 13.asd.index.module.R  →  Fig.1d, Fig.2b, Fig.3b (ASD index analysis)
 ```
@@ -60,7 +60,7 @@ Output files (with figure numbers):
 - `Fig2e.distance.between.group.txt` — Fig 2e (between-group Bray-Curtis distance tests)
 
 
-## 08.taxa.massline.batch01confounder.R
+## 08.taxa.MaAsLin.batch01confounder.R
 
 Runs MaAsLin2 on the filtered species table, adjusting for the confounder set (Age, Gender, BMI, Medication, atopic_disease, protein and fibre intake per 1000 kcal) to test Cohort and Cluster in the full cohort, and then tests each questionnaire score in ASD samples only.
 
@@ -92,7 +92,7 @@ Output files (data for module panels of Fig.3 / Fig.4 / Fig.5 and downstream sup
 - `module/Log_lm_Cluster/`
 - `module/Log_lm_asd_<variable>/` — same variable list as script 08
 
-## 11.massiline.cluster.batch01confonder.R
+## 11.MaAsLin.cluster.batch01confonder.R
 
 Combines the MaAsLin2 results from scripts 08-10 (q < 0.2, |coef| > 0.3), and draws the severity-gradient forest plot for the ordinal Cluster linear term, marking features that are also associated with ASD diagnosis (Cohort) using different point shapes.
 
@@ -100,7 +100,7 @@ Output files (with figure numbers):
 
 - `Figure3.cluster_ord_forest_plots.L.q.0.2.withcontrol_coef.0.3.withASD.pdf` — Fig 3a 
 
-## 12.massiline.subscore.pdf.batch.01confounder.R
+## 12.MaAsLin.subscore.pdf.batch.01confounder.R
 
 Groups the ASD-only MaAsLin2 results from scripts 08-10 by questionnaire domain (SRS, CBCL, ASC-ASD, SEQ) and draws forest plots per domain at q < 0.2, plus UpSet plots of the overlap of significant features between domains and a parallel set of p < 0.05 supplementary figures and tables.
 
