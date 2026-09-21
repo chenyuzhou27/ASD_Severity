@@ -7,27 +7,90 @@ Autism spectrum disorder (ASD) is a heterogeneous neurodevelopmental condition w
 **Data flow overview**
 
 ```
+HATCH_metadata.xlsx
+        │
+        └─ 01.Kmeans_code.ipynb  →  Cluster_result.xlsx
+                │
+                ├─ 02.PSM_matching_code.R + Raw_control.xlsx  →  Control_selected.xlsx
+                │
+                └─ 03.ASD_index.ipynb + Control_data.xlsx
+                        ├─ Transformed.xlsx
+                        │        ├─ 04.Figure 1a.R  →  Figure 1a.pdf
+                        │        ├─ 05.Figure 1b.R  →  Figure 1b.pdf
+                        │        └─ 06.Figure 1c.R  →  boxplot.pdf, Figure 1c.xlsx
+                        └─ ASD_index.xlsx  →  continuous ASD index for downstream metadata
+
 raw abundance tables (species / pathway / ko) + metadata
         │
-        └─ 06.batch_effect_adjust.R  →  batch-adjusted abundance tables (*.adjust_bacth_cluster.txt)
+        └─ 07.batch_effect_adjust.R  →  batch-adjusted abundance tables (*.adjust_bacth_cluster.txt)
                 │
-                ├─ 07.datacleaning.microbiomeprecess.R  →  MPSE object, alpha/beta diversity, species table
+                ├─ 08.datacleaning.microbiomeprecess.R  →  MPSE object, alpha/beta diversity, species table
                 │        │                                  (supFig1a, supFig1b, Manuscript.RData, metadata.carb.rds)
-                │        └─ 07_Figure2.final.R  →  Fig.2 panels (alpha/beta diversity, PERMANOVA, distances)
+                │        └─ 08_Figure2.final.R  →  Fig.2 panels (alpha/beta diversity, PERMANOVA, distances)
                 │
-                ├─ 08.taxa.MaAsLin.batch01confounder.R     →  taxa/Log_lm_*      (species MaAsLin2)
-                ├─ 09.pathway.batch01confounder.R           →  pathway/Log_lm_*   (pathway MaAsLin2)
-                └─ 10.module.batch01confounder.R            →  module/Log_lm_*    (GMM/GBM module MaAsLin2)
+                ├─ 09.taxa.MaAsLin.batch01confounder.R     →  taxa/Log_lm_*      (species MaAsLin2)
+                ├─ 10.pathway.batch01confounder.R           →  pathway/Log_lm_*   (pathway MaAsLin2)
+                └─ 11.module.batch01confounder.R            →  module/Log_lm_*    (GMM/GBM module MaAsLin2)
                         │
-                        ├─ 11.MaAsLin.cluster.batch01confonder.R  →  Fig.3 (severity-gradient forest plot)
-                        └─ 12.MaAsLin.subscore.pdf.batch.01confounder.R  →  Fig.4-6 + SFigure6-9
+                        ├─ 12.MaAsLin.cluster.batch01confonder.R  →  Fig.3 (severity-gradient forest plot)
+                        └─ 13.MaAsLin.subscore.pdf.batch.01confounder.R  →  Fig.4-6 + SFigure6-9
                                 │
-                                └─ 13.asd.index.module.R  →  Fig.1d, Fig.2b, Fig.3b (ASD index analysis)
+                                └─ 14.asd.index.module.R  →  Fig.1d, Fig.2b, Fig.3b (ASD index analysis)
 ```
 
 ---
 
-## 06.batch_effect_adjust.R
+## 01.Kmeans_code.ipynb
+
+Uses K-means clustering on 14 symptom subscales to stratify children with ASD into Mild, Moderate and Severe groups.
+
+Output files:
+
+- `Cluster_result.xlsx` — symptom subscales and severity-cluster labels
+
+## 02.PSM_matching_code.R
+
+Uses gender-stratified propensity-score matching to select controls matched to the ASD severity groups on demographic and anthropometric characteristics.
+
+Output files:
+
+- `Control_selected.xlsx` — selected control participants and matching covariates
+
+## 03.ASD_index.ipynb
+
+Computes a continuous ASD severity index using softmax weights derived from distances to the Control and ASD severity-cluster centres.
+
+Output files:
+
+- `Transformed.xlsx` — standardized symptom subscales used by scripts 04-06
+- `ASD_index.xlsx` — continuous ASD index and cluster summaries
+
+## 04.Figure 1a.R
+
+Plots mean standardized symptom profiles with 95% confidence intervals across Control and ASD severity groups.
+
+Output files:
+
+- `Figure 1a.pdf` — Fig 1a (symptom profiles across Control and ASD severity groups)
+
+## 05.Figure 1b.R
+
+Performs PCA on symptom profiles across Control and ASD severity groups.
+
+Output files:
+
+- `Figure 1b.pdf` — Fig 1b (PCA of standardized symptom subscales)
+
+## 06.Figure 1c.R
+
+Compares within-cluster Euclidean distances between symptom profiles using boxplots and pairwise Wilcoxon tests with BH-FDR correction.
+
+Output files:
+
+- `boxplot.pdf` — Fig 1c (within-cluster symptom-profile distances)
+- `Figure 1c.xlsx` — pairwise Wilcoxon results, including BH-adjusted p values
+
+## 07.batch_effect_adjust.R
 
 Uses `MMUPHin::adjust_batch` with `Batch` as the batch variable and `Cluster` as a covariate to correct batch effects in three abundance profiles (species, pathway, and KO gene families), normalizing each to relative abundance.
 
@@ -37,7 +100,7 @@ Output files:
 - `pathway.profile.adjust_bacth_cluster.txt`
 - `ko.profile.adjust_bacth_cluster.txt`
 
-## 07.datacleaning.microbiomeprecess.R
+## 08.datacleaning.microbiomeprecess.R
 
 Cleans the data and builds the analysis object: merges the batch-adjusted species profile with a species tree (`sp.tree.rds`) and diet metadata (`metadata_diet_per_cal.xlsx`) into a phyloseq / MicrobiotaProcess (MPSE) object, then computes alpha diversity and PCA and derives the relative-abundance species table filtered at >5% prevalence.
 
@@ -45,22 +108,22 @@ Output files:
 
 - `supFig1a.alpha_asd_control.pdf` — Supplementary Figure 1a (alpha diversity, ASD vs Control)
 - `supFig1b.pca.2groups.pdf` — Supplementary Figure 1b (PCA, ASD vs Control)
-- `metadata.carb.rds` — cleaned sample metadata used by scripts 08-13
-- `Manuscript.RData` — intermediate workspace loaded by scripts 08 and 13
+- `metadata.carb.rds` — cleaned sample metadata used by scripts 09-14
+- `Manuscript.RData` — intermediate workspace loaded by scripts 08_Figure2, 09 and 14
 
-## 07_Figure2.final.R
+## 08_Figure2.final.R
 
 Draws the microbiome-overview panels: alpha diversity across severity clusters with Wilcoxon tests, PCA by cluster, PERMANOVA (R² bar plot with BH-adjusted q values), and within- and between-group Bray-Curtis distance comparisons.
 
 Output files:
 
-- `alpha.div.test.result.txt` — Fig 2a/2b (alpha diversity Wilcoxon tests, BH-adjusted)
+- `alpha.diversity.test.result.txt` — Fig 2a/2b (alpha diversity Wilcoxon tests, BH-adjusted)
 - `Fig2c.permonova.withcontrol.txt` — Fig 2c (PERMANOVA R² and q values)
 - `Fig2d.distance.within.group.txt` — Fig 2d (within-group Bray-Curtis distance tests)
 - `Fig2e.distance.between.group.txt` — Fig 2e (between-group Bray-Curtis distance tests)
 
 
-## 08.taxa.MaAsLin.batch01confounder.R
+## 09.taxa.MaAsLin.batch01confounder.R
 
 Runs MaAsLin2 on the filtered species table, adjusting for the confounder set (Age, Gender, BMI, Medication, atopic_disease, protein and fibre intake per 1000 kcal) to test Cohort and Cluster in the full cohort, and then tests each questionnaire score in ASD samples only.
 
@@ -72,17 +135,17 @@ Output files (data for taxonomy panels of Fig.3 / Fig.4 / Fig.5 and downstream s
 
 Each output folder contains the standard MaAsLin2 files.
 
-## 09.pathway.batch01confounder.R
+## 10.pathway.batch01confounder.R
 
-Mirrors script 08 at the pathway level: runs MaAsLin2 on the batch-adjusted pathway profile with the same confounder set to test Cohort and Cluster in the full cohort and each questionnaire score in ASD samples only.
+Mirrors script 09 at the pathway level: runs MaAsLin2 on the batch-adjusted pathway profile with the same confounder set to test Cohort and Cluster in the full cohort and each questionnaire score in ASD samples only.
 
 Output files (data for pathway panels of Fig.3 / Fig.4 / Fig.5 and downstream supplementary figures/tables):
 
 - `pathway/Log_lm_Cohort/`
 - `pathway/Log_lm_Cluster/`
-- `pathway/Log_lm_asd_<variable>/` — same variable list as script 08
+- `pathway/Log_lm_asd_<variable>/` — same variable list as script 09
 
-## 10.module.batch01confounder.R
+## 11.module.batch01confounder.R
 
 Reconstructs GMM and GBM functional module abundances from the batch-adjusted KO profile with `omixerRpm` and runs MaAsLin2 on module abundance with the same confounder set against Cohort, Cluster, and each questionnaire score in ASD samples only.
 
@@ -90,19 +153,19 @@ Output files (data for module panels of Fig.3 / Fig.4 / Fig.5 and downstream sup
 
 - `module/Log_lm_Cohort/`
 - `module/Log_lm_Cluster/`
-- `module/Log_lm_asd_<variable>/` — same variable list as script 08
+- `module/Log_lm_asd_<variable>/` — same variable list as script 09
 
-## 11.MaAsLin.cluster.batch01confonder.R
+## 12.MaAsLin.cluster.batch01confonder.R
 
-Combines the MaAsLin2 results from scripts 08-10 (q < 0.2, |coef| > 0.3), and draws the severity-gradient forest plot for the ordinal Cluster linear term, marking features that are also associated with ASD diagnosis (Cohort) using different point shapes.
+Combines the MaAsLin2 results from scripts 09-11 (q < 0.2, |coef| > 0.3), and draws the severity-gradient forest plot for the ordinal Cluster linear term, marking features that are also associated with ASD diagnosis (Cohort) using different point shapes.
 
 Output files:
 
 - `Figure3.cluster_ord_forest_plots.L.q.0.2.withcontrol_coef.0.3.withASD.pdf` — Fig 3a 
 
-## 12.MaAsLin.subscore.pdf.batch.01confounder.R
+## 13.MaAsLin.subscore.pdf.batch.01confounder.R
 
-Groups the ASD-only MaAsLin2 results from scripts 08-10 by questionnaire domain (SRS, CBCL, ASC-ASD, SEQ) and draws forest plots per domain at q < 0.2, plus UpSet plots of the overlap of significant features between domains and a parallel set of p < 0.05 supplementary figures and tables.
+Groups the ASD-only MaAsLin2 results from scripts 09-11 by questionnaire domain (SRS, CBCL, ASC-ASD, SEQ) and draws forest plots per domain at q < 0.2, plus UpSet plots of the overlap of significant features between domains and a parallel set of p < 0.05 supplementary figures and tables.
 
 Output files:
 
@@ -115,7 +178,7 @@ Output files:
 - `symptom.qvalue.xlsx` — q < 0.2 marker table per domain
 - `SFigure5_8.txt` — p < 0.05 marker table behind SFigure6-9
 
-## 13.asd.index.module.R
+## 14.asd.index.module.R
 
 Analyses the continuous ASD index : draws a ridge plot of the index across severity clusters and runs MaAsLin2 of modules, pathways, and species against the ASD index with the same confounder set, then merges the hits (q < 0.2, |coef| > 0.3), flags those that also appear among ASD-diagnosis (Cohort) markers, and draws the resulting forest plot.
 
@@ -132,12 +195,16 @@ Output files:
 
 Files:
 
+- `HATCH_metadata.xlsx`, `Raw_control.xlsx`, `Control_data.xlsx` — required clinical input files for scripts 01-03 (not included in this repository according to our Data Availability policy)
 - `cluster.marker.nodes.mathc_lable.csv` - Formatting standards and description mappings for taxa, modules, and pathways
 - `module.descript.txt` - Description files mapping Module IDs to module descriptions
 - `sp.tree.rds` - Taxonomic lineage and clade mapping for species
 ---
 
 ## Environment & Dependencies
+
+- **Core Python dependencies:** pandas, NumPy, SciPy and scikit-learn
+- **Core R dependencies for scripts 02 and 04-06:** MatchIt, MicrobiotaProcess, vegan and ggplot2
 
 - **R Version:** 4.5.3 (2026-03-11)
 - **Platform:** x86_64-redhat-linux-gnu
@@ -209,3 +276,6 @@ loaded via a namespace (and not attached):
 [129] Matrix_1.7-4                patchwork_1.3.2             SummarizedExperiment_1.40.0 igraph_2.3.0               
 [133] RcppParallel_5.1.11-2       biglm_0.9-3                 ggtree_4.0.5                DEoptimR_1.1-4             
 [137] ape_5.8-1
+```
+
+</details>
