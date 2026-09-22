@@ -33,13 +33,13 @@ raw abundance tables (species / pathway / ko) + metadata
                 └─ 11.module.batch01confounder.R            →  module/Log_lm_*    (GMM/GBM module MaAsLin2)
                         │
                         ├─ 12.MaAsLin.cluster.batch01confonder.R  →  Fig.3 (severity-gradient forest plot)
-                        └─ 13.MaAsLin.subscore.pdf.batch.01confounder.R  →  Fig.4-6 + SFigure6-9
+                        └─ 13.MaAsLin.subscore.pdf.batch.01confounder.R  →  Fig.4-6 + SFigure6-8
                                 │
                                 └─ 14.asd.index.module.R  →  Fig.1d, Fig.2b, Fig.3b (ASD index analysis)
 
 metadata_diet_per_cal.xlsx
         │
-        └─ 15.Kmeans_stability.ipynb  →  figures_kmeans_stability/ (ARI and label agreement plots)
+        └─ 15.Kmeans_stability.ipynb  →  SFigure9 (ARI and label agreement plots)
 ```
 
 ---
